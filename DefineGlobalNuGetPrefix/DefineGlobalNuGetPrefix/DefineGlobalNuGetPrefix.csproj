@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <PackageId>MyPrefix.$(MSBuildProjectName)</PackageId>
+        <PackageOutputPath>$(MSBuildThisFileDirectory)../../local-nuget-test-feed</PackageOutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+        <NoWarn>$(NoWarn);NU5128;</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup Label="FilesInPackage">
+        <Content Include="Package.props" PackagePath="build/$(PackageId).props" />
+        <Content Include="Package.props" PackagePath="buildCrossTargeting/$(PackageId).props" />
+    </ItemGroup>
+</Project>
