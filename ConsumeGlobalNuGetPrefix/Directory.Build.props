@@ -1,0 +1,11 @@
+<Project>
+
+  <PropertyGroup>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)../local-nuget-test-feed</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MyPrefix.DefineGlobalNuGetPrefix" Version="1.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>
